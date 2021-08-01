@@ -83,10 +83,12 @@ code {
   height: 100%;
   width: 300px;
 }
+
 .chat-list-container {
   overflow-y: auto;
   height: calc(100% - 150px);
 }
+
 .no-chats-yet {
   padding: 15px;
 }
@@ -410,4 +412,32 @@ code {
   top: 5px;
   right: 5px;
   cursor: pointer;
+}
+.go-back-icon{
+  height: 100%;
+  display: none;
+  cursor: pointer;
+  align-items: center;
+  padding-bottom: 5px;
+}
+@media only screen and (max-width: 600px) {
+  chat-container {
+    flex-direction: column;
+  }
+  .left-rail{
+    display:block;
+    position:relative;
+    width:100%;
+  }
+  .current-chat{
+    display:none;
+  }
+  .chat-controls {
+    position: fixed;
+    bottom: 0;
+    }
+    .go-back-icon{
+      display:block
+    }
+
 }

@@ -1,8 +1,9 @@
-import React from 'react';
+import { React }from 'react';
 import { useChat } from 'context';
 import { ChatAvatar } from 'components';
 import { Icon } from 'semantic-ui-react';
 import { joinUsernames, notMe } from 'helpers';
+import ReactDOM from 'react-dom'
 
 export const ChatList = () => {
   const {
@@ -12,6 +13,23 @@ export const ChatList = () => {
     selectChatClick,
     deleteChatClick,
   } = useChat();
+  
+
+  function selectChatClick_v2 (c){
+    selectChatClick(c);
+    //hide chatlist and show chat
+    let sidebar = document.getElementsByClassName('left-rail')[0]
+    let toChat = document.getElementsByClassName('current-chat')[0]
+    
+    // = this.state.isClicked?'black' : 'white'
+    if (window.innerWidth<=600){ReactDOM.findDOMNode(sidebar).style.display = 'none';ReactDOM.findDOMNode(toChat).style.display = 'block';}
+    else {console.log('megalytero')}
+    //console.log('dom',ReactDOM.findDOMNode(element).style)
+    
+    console.log('dom-side',ReactDOM.findDOMNode(sidebar),ReactDOM.findDOMNode(sidebar).style.display,)
+    console.log('dom-chat',ReactDOM.findDOMNode(toChat),ReactDOM.findDOMNode(toChat).style.display,)
+    console.log('ye?',c);
+  }
 
   return (
     <div className="chat-list">
@@ -23,7 +41,7 @@ export const ChatList = () => {
           key={index}
         >
           <div
-            onClick={() => selectChatClick(c)}
+            onClick={() => selectChatClick_v2(c)}
             className="chat-list-item-content"
           >
             {c.people.length === 1 ? (
