@@ -428,9 +428,11 @@ code {
     display:block;
     position:relative;
     width:100%;
+    overflow:auto;
   }
   .current-chat{
     display:none;
+    overflow:auto;
   }
   .chat-controls {
     position: fixed;
