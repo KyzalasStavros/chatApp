@@ -421,7 +421,7 @@ code {
   padding-bottom: 5px;
 }
 @media only screen and (max-width: 600px) {
-  chat-container {
+  .chat-container {
     flex-direction: column;
   }
   .left-rail{
@@ -433,13 +433,25 @@ code {
   .current-chat{
     display:none;
     overflow:auto;
+
+  }
+  .chat-mesasges{
+    padding-bottom: 0;
   }
   .chat-controls {
-    position: fixed;
+    position: sticky;
     bottom: 0;
-    }
-    .go-back-icon{
-      display:block
-    }
+  }
+  .go-back-icon{
+    display:block
+  }
 
+  .chat-toolbar{
+    position:sticky;
+    top:0;
+  }
+  .root{
+    display:block;
+    overflow:hidden;
+  }
 }
